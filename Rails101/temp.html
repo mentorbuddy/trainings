@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="description" content="Learn how to quickly get started using our CSS framework. We have guides for a variety of skill levels.">
+    <title>Getting Started</title>
+    <!-- Favicons-->
+    <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+    <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
+    <!--  Android 5 Chrome Color-->
+    <meta name="theme-color" content="#EE6E73">
+    <!-- CSS-->
+    <link href="css/prism.css" rel="stylesheet">
+    <link href="css/ghpages-materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="//cdn.transifex.com/live.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only"><i class="material-icons">menu</i></a></div>
+      <ul id="nav-mobile" class="side-nav fixed">
+        <li class="logo"><a id="logo-container" href="http://mentorbuddy.in/" class="brand-logo">
+            <object id="front-page-logo" type="image/svg+xml" data="res/materialize.svg">Your browser does not support SVG</object></a></li>
+        <li class="search">
+          <div class="search-wrapper card">
+            <input id="search"><i class="material-icons">search</i>
+            <div class="search-results"></div>
+          </div>
+        </li>
+        <li class="bold"><a href="#" class="waves-effect waves-teal">About</a></li>
+        <li class="bold active"><a href="index.html" class="waves-effect waves-teal">Getting Started</a></li>
+        <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li class="bold"><a class="collapsible-header  waves-effect waves-teal">BackEnd</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="controller.html">Controllers and Views</a></li>
+                  <li><a href="forms.html">Forms in Rails</a></li>
+                  <li><a href="models.html">Models</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="bold"><a class="collapsible-header  waves-effect waves-teal">FontEnd</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="bootstrap.html">Adding Bootstrap</a></li>
+
+                </ul>
+              </div>
+            </li>
+      </ul>
+    </header>
+    <main><div class="section" id="index-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m9">
+        <h1 class="header center-on-small-only">Some code to refer</h1>
+      </div>
+      <div class="col s12 m3">
+        <!-- BuySellAds Zone Code -->
+        <div class="buysellads-header center-on-small-only">
+          <!-- CarbonAds Zone Code -->
+          <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=materializecss" id="_carbonads_js"></script>
+        </div>
+        <!-- End BuySellAds Zone Code -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <!--  Outer row  -->
+  <div class="row">
+
+    <div class="section col s12 m9 l10">
+      <div id="download" class="row scrollspy">
+          <h2 class="col s12 header">Form</h2>
+        <p class="caption col s12"></p>
+        <div class="col s12">
+          <br>
+          <p class="promo-caption">The Form</p>
+          <p>Verfiy the Installations for a Basic Rails Setup.</p>
+          <pre><code class="language-markup">
+            <h1>Add Post</h1>
+            <%= form_for :post, url: posts_path do |f| %>
+              <p>
+                <%= f.label :title %><br>
+                <%= f.text_field :title %>
+              </p>
+              <p>
+                <%= f.label :body %><br>
+                <%= f.text_area :body %>
+              </p>
+
+              <p>
+                <%= f.submit %>
+              </p>
+              <% end %>
+          </code></pre>
+        </div>
+      </div>
+
+      <div id="setup" class="row scrollspy">
+        <div class="col s12">
+          <h2 class="header">Validation</h2>
+          <pre><code class="language-bash">
+            <% if @post.errors.any? %>
+              <% @post.errors.full_messages.each do |msg| %>
+                <div class="alert alert-danger"><%= msg %></div>
+              <% end %>
+            <% end %>
+          </code></pre>
+        </div>
+      </div>
+
+      <div id="ps" class="row scrollspy">
+        <div class="col s12">
+          <p class="promo-caption">Project Structure</p>
+          <p>Open the files into the directory where your website is located. Your directory will look something like this.</p>
+          <p>You'll notice that there are a few more folders but these are mostly the Files that we will Focus on during this session.</p>
+
+          <pre><code class="language-markup directory-markup">
+  MyWebsite/
+  |--app/
+  |  |--assets/
+  |  |  |--images/
+  |
+  |  |  |--javascripts/
+  |  |  |  |--application.js
+  |
+  |  |  |--stylesheets/
+  |  |  |  |--application.css
+  |
+  |  |--controllers/
+  |  |  |--application_controller.rb
+  |
+  |  |--models/
+  |  |
+  |  |--views/
+  |  |  |--layouts/
+  |  |  |--application.html.erb
+  |
+  |
+  |--config/
+  |  |--routes.rb
+  |
+  |--Gemfile
+          </code></pre>
+      </div>
+    </div>
+
+    <div id="mvc" class="row scrollspy">
+      <div class="col s12">
+        <div class="row">
+        <div class="col s12 m8 offset-m2">
+          <br>
+          <img id="responsive-img" src="images/responsive.png">
+        </div>
+      </div>
+        <h2 class="header">MVC simplifies life for developers and the users they serve.</h2>
+        <div class="row">
+          <div class="col s12 m4">
+            <div class="center promo">
+              <i class="material-icons">flash_on</i>
+              <p class="promo-caption">Models</p>
+              <p class="light center">Deals with the Database or the API or any other data storage we use, Performs functions like selects, inserts etc.</p>
+            </div>
+          </div>
+
+          <div class="col s12 m4">
+            <div class="center promo">
+              <i class="material-icons">group</i>
+              <p class="promo-caption">Views</p>
+              <p class="light center">Used to Load the user interface, Mostly responsible for what the user sees in the browser.</p>
+            </div>
+          </div>
+
+          <div class="col s12 m4">
+            <div class="center promo">
+              <i class="material-icons">settings</i>
+              <p class="promo-caption">Controllers</p>
+              <p class="light center">Looks at the URL and Decide What Method in that Controller to Load, Also responsible for talking to the Model and the View.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+    </div>
+    <!-- Table of contents -->
+      <div class="col hide-on-small-only m3 l2">
+        <div class="toc-wrapper">
+          <div style="height: 1px;">
+          <ul class="table-of-contents">
+            <li><a href="#download">Form</a></li>
+            <li><a href="#setup">validation</a></li>
+            <li><a href="#ps">Project Structure</a></li>
+            <li><a href="#mvc">MVC</a></li>
+          </ul>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
+
+    </main>    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l4 s12">
+            <h5 class="white-text">Help MentorBuddy Grow</h5>
+          </div>
+          <div class="col l4 s12">
+            <h5 class="white-text">Join the Discussion</h5>
+            </div>
+          <div class="col l4 s12" style="overflow: hidden;">
+            <h5 class="white-text">Connect</h5>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2017 MentorBuddy, All rights reserved.
+        <a class="grey-text text-lighten-4 right" href="https://github.com/mentorbuddy/Tutorials/master/LICENSE">MIT License</a>
+        </div>
+      </div>
+    </footer>
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>if (!window.jQuery) { document.write('<script src="bin/jquery-2.1.1.min.js"><\/script>'); }
+    </script>
+    <script src="js/jquery.timeago.min.js"></script>
+    <script src="js/prism.js"></script>
+    <script src="jade/lunr.min.js"></script>
+    <script src="jade/search.js"></script>
+    <script src="bin/materialize.js"></script>
+    <script src="js/init.js"></script>
+    <!-- Twitter Button -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+    <!-- Google Plus Button-->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
+    <script>
+      $('#download-source, #download-sass').on('click', function () {
+        $('#download').slideUp(
+          { duration: 500,
+            easing: "easeOutQuart",
+            queue: false,
+            complete: function()
+              { $('#download-thanks').slideDown({ duration: 300,
+            easing: "easeOutQuart"}); }
+          });
+
+      });
+    </script>
+  </body>
+</html>

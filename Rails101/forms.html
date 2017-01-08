@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="description" content="Learn how to quickly get started using our CSS framework. We have guides for a variety of skill levels.">
+    <title>Controllers and Views</title>
+    <!-- Favicons-->
+    <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+    <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
+    <!--  Android 5 Chrome Color-->
+    <meta name="theme-color" content="#EE6E73">
+    <!-- CSS-->
+    <link href="css/prism.css" rel="stylesheet">
+    <link href="css/ghpages-materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="//cdn.transifex.com/live.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only"><i class="material-icons">menu</i></a></div>
+      <ul id="nav-mobile" class="side-nav fixed">
+        <li class="logo"><a id="logo-container" href="http://mentorbuddy.in/" class="brand-logo">
+            <object id="front-page-logo" type="image/svg+xml" data="res/materialize.svg">Your browser does not support SVG</object></a></li>
+        <li class="search">
+          <div class="search-wrapper card">
+            <input id="search"><i class="material-icons">search</i>
+            <div class="search-results"></div>
+          </div>
+        </li>
+        <li class="bold"><a href="#" class="waves-effect waves-teal">About</a></li>
+        <li class="bold"><a href="index.html" class="waves-effect waves-teal">Getting Started</a></li>
+        <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li class="bold"><a class="collapsible-header  waves-effect waves-teal">BackEnd</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li class="active"><a href="controller.html">Controllers and Views</a></li>
+                  <li><a href="forms.html">Forms in Rails</a></li>
+                  <li><a href="models.html">Models</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="bold"><a class="collapsible-header  waves-effect waves-teal">FontEnd</a>
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="bootstrap.html">Adding Bootstrap</a></li>
+
+                </ul>
+              </div>
+            </li>
+      </ul>
+    </header>
+    <main><div class="section" id="index-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m9">
+        <h1 class="header center-on-small-only">Playing with Forms</h1>
+      </div>
+      <div class="col s12 m3">
+        <!-- BuySellAds Zone Code -->
+        <div class="buysellads-header center-on-small-only">
+          <!-- CarbonAds Zone Code -->
+          <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=materializecss" id="_carbonads_js"></script>
+        </div>
+        <!-- End BuySellAds Zone Code -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <!--  Outer row  -->
+  <div class="row">
+
+    <div class="section col s12 m9 l10">
+      <div id="pre-section" class="row scrollspy">
+          <h2 class="col s12">Update the Posts First</h2>
+        <div class="col s12">
+          <pre><code class="language-markup">
+    class PostsController < ApplicationController
+      def index
+
+      end
+      def new
+
+      end
+    end
+
+          </code></pre>
+          <p>Create views/Posts/new</p>
+          <pre><code class="language-markup">
+      <h1>Add Post</h1>
+          </code></pre>
+        </div>
+      </div>
+
+      <div id="add-page" class="row scrollspy">
+        <div class="col s12">
+          <h2 class="header">Adding a new Page</h2>
+          <p class="promo-caption">Edit the Controller</p>
+          <p>You should now add the index method to posts_controller.rb</p>
+          <pre><code class="language-markup">
+    class PostsController < ApplicationController
+      def index
+
+      end
+    end
+          </code></pre>
+          <br>
+          <p class="promo-caption">Add the corresponding view</p>
+          <p>You should now make a new file "index.html.erb" in app/views/posts</p>
+          <pre><code class="language-markup">
+      &lt;h1>Hello World!&lt;/h1>
+
+          </code></pre>
+          <br>
+          <p class="promo-caption">Modifying the Routes</p>
+          <p>You should now make an entry in config/routes.rb to override the default Rails page with the one we just created</p>
+          <pre><code class="language-markup">
+        Rails.application.routes.draw do
+          root 'posts#index'
+        end
+
+          </code></pre>
+          <p>This tells rails to look at the posts controller and in that the index method and the corresponding view</p>
+          <p>Go back to the Browser and reload http://localhost:3000</p>
+          <br>
+
+        </div>
+    </div>
+
+    <div id="another-control" class="row scrollspy">
+      <div class="col s12">
+        <h2 class="header">Adding another Controller</h2>
+        <p class="promo-caption">Add a Controller for static Pages</p>
+        <p>This can be used to show the about page, team page or contact page etc</p>
+        <pre><code class="language-markup">
+  $ rails g controller Pages
+        create  app/controllers/pages_controller.rb
+        invoke  erb
+        create    app/views/pages
+        invoke  test_unit
+        create    test/controllers/pages_controller_test.rb
+        invoke  helper
+        create    app/helpers/pages_helper.rb
+        invoke    test_unit
+        invoke  assets
+        invoke    coffee
+        create      app/assets/javascripts/pages.coffee
+        invoke    scss
+        create      app/assets/stylesheets/pages.scss
+
+        </code></pre>
+        <br>
+        <p class="promo-caption">Edit the Controller</p>
+        <p>You should now add the index method to pages_controller.rb</p>
+        <pre><code class="language-markup">
+  class PostsController < ApplicationController
+    def about
+
+    end
+  end
+        </code></pre>
+        <br>
+        <p class="promo-caption">Add the corresponding view</p>
+        <p>You should now make a new file "about.html.erb" in app/views/posts</p>
+        <pre><code class="language-markup">
+    &lt;h1>About!&lt;/h1>
+
+        </code></pre>
+        <br>
+        <p class="promo-caption">Modifying the Routes</p>
+        <p>You should now make an entry in config/routes.rb to override the default Rails page with the one we just created</p>
+        <pre><code class="language-markup">
+      Rails.application.routes.draw do
+        root 'posts#index'
+        get 'about' => 'pages#about'
+      end
+
+        </code></pre>
+        <p>This tells rails to look at the pages controller but get the about page directly and not /pages/about</p>
+        <p>Go back to the Browser and reload http://localhost:3000</p>
+        <br>
+
+      </div>
+  </div>
+
+
+  <div id="dynamic-content" class="row scrollspy">
+    <div class="col s12">
+      <h2 class="header">Adding some Dynamic Content</h2>
+      <p class="promo-caption">Add the Title Field to the controller</p>
+      <p>Edit pages_controller.rb</p>
+      <pre><code class="language-markup">
+    class PagesController < ApplicationController
+      def about
+        @title = 'About Us'
+      end
+    end
+
+      </code></pre>
+      <br>
+      <p class="promo-caption">Edit the View to reflect Changes</p>
+      <p>Data can be sent from controller to the view very easily</p>
+      <pre><code class="language-markup">
+    <h1><%= @title %></h1>
+      </code></pre>
+      <br>
+      <p class="promo-caption">Add the Content Section</p>
+      <p>Edit pages_controller.rb</p>
+      <pre><code class="language-markup">
+        class PagesController < ApplicationController
+          def about
+            @title = 'About Us'
+            @content = 'This is the About Page.'
+          end
+        end
+
+      </code></pre>
+      <br>
+      <p class="promo-caption">Showing the Content on the View</p>
+      <pre><code class="language-markup">
+        <h1><%= @title %></h1>
+        <p><%= @content %></p>
+
+      </code></pre>
+    </div>
+
+      <div class="section col s12 m9 l10">
+        <div id="gen-resource" class="row scrollspy">
+            <h2 class="col s12 header">Adding a resource</h2>
+          <div class="col s12">
+            <p>Close the Pages Controller</p>
+            <p>We will not be working with that</p>
+            <p>But for our Posts we need a lot of methods like :index(which we have) a show view and a show method, to show the individual posts and index will will be a list of Posts new, edit, destroy</p>
+            <p>Instead of doing that manually we can Claim Posts to be a resource</p>
+            <pre><code class="language-markup">
+              Rails.application.routes.draw do
+                root 'posts#index'
+                get 'about' => 'pages#about'
+                resources :posts
+              end
+            </code></pre>
+            <p>You can see the routes that this added</p>
+            <pre><code class="language-bash">
+      $ rake routes
+         Prefix Verb   URI Pattern               Controller#Action
+           root GET    /                         posts#index
+          about GET    /about(.:format)          pages#about
+          posts GET    /posts(.:format)          posts#index
+                POST   /posts(.:format)          posts#create
+       new_post GET    /posts/new(.:format)      posts#new
+      edit_post GET    /posts/:id/edit(.:format) posts#edit
+           post GET    /posts/:id(.:format)      posts#show
+                PATCH  /posts/:id(.:format)      posts#update
+                PUT    /posts/:id(.:format)      posts#update
+                DELETE /posts/:id(.:format)      posts#destroy
+
+            </code></pre>
+          </div>
+        </div>
+
+    </div>
+</div>
+
+    </div>
+    <!-- Table of contents -->
+      <div class="col hide-on-small-only m3 l2">
+        <div class="toc-wrapper">
+          <div style="height: 1px;">
+          <ul class="table-of-contents">
+            <li><a href="#gen-control">Generate a Controller</a></li>
+            <li><a href="#add-page">Add a Page</a></li>
+            <li><a href="#another-control">Another Controller</a></li>
+            <li><a href="#dynamic-content">Adding Dynamic Content</a></li>
+            <li><a href="#gen-resource">Adding a Resource</a></li>
+          </ul>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
+
+    </main>    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l4 s12">
+            <h5 class="white-text">Help MentorBuddy Grow</h5>
+          </div>
+          <div class="col l4 s12">
+            <h5 class="white-text">Join the Discussion</h5>
+            </div>
+          <div class="col l4 s12" style="overflow: hidden;">
+            <h5 class="white-text">Connect</h5>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2017 MentorBuddy, All rights reserved.
+        <a class="grey-text text-lighten-4 right" href="https://github.com/mentorbuddy/Tutorials/master/LICENSE">MIT License</a>
+        </div>
+      </div>
+    </footer>
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>if (!window.jQuery) { document.write('<script src="bin/jquery-2.1.1.min.js"><\/script>'); }
+    </script>
+    <script src="js/jquery.timeago.min.js"></script>
+    <script src="js/prism.js"></script>
+    <script src="jade/lunr.min.js"></script>
+    <script src="jade/search.js"></script>
+    <script src="bin/materialize.js"></script>
+    <script src="js/init.js"></script>
+    <!-- Twitter Button -->
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+    <!-- Google Plus Button-->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
+    <script>
+      $('#download-source, #download-sass').on('click', function () {
+        $('#download').slideUp(
+          { duration: 500,
+            easing: "easeOutQuart",
+            queue: false,
+            complete: function()
+              { $('#download-thanks').slideDown({ duration: 300,
+            easing: "easeOutQuart"}); }
+          });
+
+      });
+    </script>
+  </body>
+</html>
